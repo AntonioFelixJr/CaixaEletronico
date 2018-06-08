@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apSenha" maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #390959;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.caixaCifra.Controller.FXMLSenhaController">
+   <children>
+      <JFXPasswordField fx:id="pfSenha" alignment="TOP_LEFT" focusColor="WHITE" labelFloat="true" layoutX="495.0" layoutY="371.0" nodeOrientation="LEFT_TO_RIGHT" onKeyPressed="#mskSenha" onKeyReleased="#validarSenha" prefHeight="58.0" prefWidth="215.0" promptText="Senha" unFocusColor="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+         </effect>
+      </JFXPasswordField>
+      <Label layoutX="136.0" layoutY="218.0" text="Preencha o campo da senha:" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btEntrar" layoutX="602.0" layoutY="642.0" onMouseClicked="#entrar" prefHeight="51.0" prefWidth="143.0" ripplerFill="#390959" style="-fx-background-color: #ffffff;" text="Entrar" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btVoltar" layoutX="455.0" layoutY="642.0" onMouseClicked="#voltarMenu" prefHeight="51.0" prefWidth="125.0" ripplerFill="#390959" style="-fx-background-color: #ffff;" text="Voltar" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="190.0" fitWidth="1410.0" layoutX="-80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Resources/Topo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbErroSenha" layoutX="513.0" layoutY="448.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

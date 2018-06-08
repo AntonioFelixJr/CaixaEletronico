@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #390959;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.caixaCifra.Controller.FXMLMenuController">
+<children>
+      <ImageView fitHeight="190.0" fitWidth="1410.0" layoutX="-80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Resources/Topo.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btSaque" layoutX="255.0" layoutY="341.0" onAction="#abrirSaque" prefHeight="50.0" prefWidth="300.0" ripplerFill="#390959" style="-fx-background-color: #FFF;" text="Saque" textAlignment="JUSTIFY" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btSaldo" layoutX="739.0" layoutY="341.0" onAction="#abrirSaldo" prefHeight="50.0" prefWidth="300.0" ripplerFill="#390959" style="-fx-background-color: #FFF;" text="Saldo" textAlignment="JUSTIFY" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btPagamento" layoutX="255.0" layoutY="421.0" onAction="#abrirPagamento" prefHeight="50.0" prefWidth="300.0" ripplerFill="#390959" style="-fx-background-color: #FFF;" text="Pagamento" textAlignment="JUSTIFY" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btDeposito" layoutX="739.0" layoutY="421.0" onAction="#abrirDeposito" prefHeight="50.0" prefWidth="300.0" ripplerFill="#390959" style="-fx-background-color: #FFF;" text="Depósito" textAlignment="JUSTIFY" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btTransferencia" layoutX="255.0" layoutY="497.0" onAction="#abrirTransferencia" prefHeight="50.0" prefWidth="300.0" ripplerFill="#390959" style="-fx-background-color: #FFF;" text="Transfêrencia" textAlignment="JUSTIFY" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btVoltar" layoutX="739.0" layoutY="497.0" onAction="#sair" prefHeight="50.0" prefWidth="300.0" ripplerFill="#390959" style="-fx-background-color: #FFF;" text="Sair" textAlignment="JUSTIFY" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lbEscolherOp" layoutX="121.0" layoutY="218.0" text="Escolha a operação que deseja realizar: " textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbBemVindo" layoutX="35.0" layoutY="156.0" text="Seja bem-vindo " textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbNome" layoutX="212.0" layoutY="156.0" text="Nome" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+</children>
+</AnchorPane>

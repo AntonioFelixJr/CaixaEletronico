@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #390959;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.caixaCifra.Controller.FXMLTransferenciaController">
+   <children>
+      <JFXButton fx:id="btVoltar" layoutX="1061.0" layoutY="655.0" onMouseClicked="#voltarMenu" prefHeight="51.0" prefWidth="125.0" ripplerFill="#390959" style="-fx-background-color: #ffffff;" text="Voltar" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btLimpar" layoutX="475.0" layoutY="656.0" onMouseClicked="#limparCampos" prefHeight="51.0" prefWidth="125.0" ripplerFill="#390959" style="-fx-background-color: #ffff;" text="Limpar" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btTransferencia" layoutX="622.0" layoutY="656.0" onMouseClicked="#transferencia" prefHeight="51.0" prefWidth="143.0" ripplerFill="#390959" style="-fx-background-color: #ffffff;" text="Transferir" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="187.0" layoutY="201.0" text="Preencha os campos:" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtConta" alignment="TOP_LEFT" focusColor="#f20000" labelFloat="true" layoutX="325.0" layoutY="289.0" maxWidth="207.0" minWidth="181.0" onKeyPressed="#maskConta" onKeyReleased="#validarConta" prefHeight="57.0" prefWidth="181.0" promptText="Conta" unFocusColor="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDigito" alignment="TOP_LEFT" focusColor="#f20000" labelFloat="true" layoutX="509.0" layoutY="289.0" maxWidth="102.0" minWidth="62.0" onKeyPressed="#maskDigito" onKeyReleased="#validarDigito" prefHeight="57.0" prefWidth="62.0" promptText="Digito" unFocusColor="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAgencia" alignment="TOP_LEFT" focusColor="WHITE" labelFloat="true" layoutX="325.0" layoutY="395.0" onKeyPressed="#maskAgencia" onKeyReleased="#validarAgencia" prefHeight="51.0" prefWidth="248.0" promptText="Agência" unFocusColor="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </JFXTextField>
+      <JFXTextField fx:id="txtValor" alignment="TOP_LEFT" focusColor="WHITE" labelFloat="true" layoutX="333.0" layoutY="508.0" onKeyPressed="#maskValor" onKeyReleased="#validarValor" prefHeight="51.0" prefWidth="248.0" promptText="Valor" unFocusColor="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </JFXTextField>
+      <Label fx:id="lbErroConta" layoutX="333.0" layoutY="350.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbErroAgencia" layoutX="333.0" layoutY="453.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbErroDigito" layoutX="522.0" layoutY="350.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="190.0" fitWidth="1410.0" layoutX="-80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Resources/Topo.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cbBanco" layoutX="811.0" layoutY="423.0" onHidden="#validarBanco" prefHeight="25.0" prefWidth="270.0" promptText="Escolha seu banco" style="-fx-font-size: 20;" visibleRowCount="7" />
+      <RadioButton fx:id="rbCorrente" layoutX="811.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#clickCorrente" text="Corrente" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="idGrupo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbPoupa" layoutX="979.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#clickPoupanca" text="Poupança" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="idGrupo" />
+         </toggleGroup>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <Label fx:id="lbTpConta" layoutX="811.0" layoutY="289.0" text="Tipo da Conta" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbErroBanco" layoutX="827.0" layoutY="488.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbErroValor" layoutX="341.0" layoutY="570.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

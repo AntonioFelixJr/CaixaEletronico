@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #390959;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.caixaCifra.Controller.FXMLPagamentoController">
+   <children>
+      <JFXTextField fx:id="txtCodBarra" alignment="TOP_LEFT" focusColor="#f20000" labelFloat="true" layoutX="383.0" layoutY="336.0" maxWidth="629.0" minWidth="181.0" onKeyReleased="#mskCodBarra" prefHeight="51.0" prefWidth="629.0" promptText="Código de barras" unFocusColor="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </JFXTextField>
+      <JFXTextField fx:id="txtValor" alignment="TOP_LEFT" focusColor="#f20000" labelFloat="true" layoutX="388.0" layoutY="455.0" maxWidth="281.0" minWidth="181.0" onKeyReleased="#mskValor" prefHeight="51.0" prefWidth="281.0" promptText="Valor" unFocusColor="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </JFXTextField>
+      <JFXButton layoutX="606.0" layoutY="631.0" onMouseClicked="#pagar" prefHeight="51.0" prefWidth="126.0" ripplerFill="#390959" style="-fx-background-color: #ffffff;" text="Pagar" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="445.0" layoutY="631.0" onMouseClicked="#limpar" prefHeight="51.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Limpar" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1026.0" layoutY="631.0" onMouseClicked="#voltar" prefHeight="51.0" prefWidth="126.0" style="-fx-background-color: #ffffff;" text="Voltar" textFill="#390959">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="68.0" layoutY="220.0" text="Preencha os campos abaixo para efetuar o pagamento:" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbErroCodBarra" layoutX="410.0" layoutY="390.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="328.0" layoutY="447.0" text="R$" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="190.0" fitWidth="1410.0" layoutX="-80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Resources/Topo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbErroValor" layoutX="410.0" layoutY="516.0" prefHeight="0.0" prefWidth="35.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbErroAgencia" layoutX="410.0" layoutY="400.0" text="ERRO" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
