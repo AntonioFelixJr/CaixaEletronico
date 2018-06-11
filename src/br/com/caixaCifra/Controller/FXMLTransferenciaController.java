@@ -172,18 +172,21 @@ public class FXMLTransferenciaController implements Initializable {
                 cp.alerta("Conta inválida","Digite uma conta válida para prosseguir.");
                 
             }else{
-         
-                if(opM.sacar(Double.parseDouble(txtValor.getText()), ClienteLogado.getCodConta())
-                   && opM.depositar(Double.parseDouble(txtValor.getText()), conta.getCodConta())     ){
-
-                    cp.alertaSucesso("Transferência");
-                    voltarMenu();
-
-                }else{
-
-                    cp.alerta("Tranferência negado!", "Saldo insuficiente. Faça um depósito");
+                if(cp.alertaConfirmacao(conta, Double.parseDouble(txtValor.getText()))){
                     
+                    if(opM.sacar(Double.parseDouble(txtValor.getText()), ClienteLogado.getCodConta())
+                        && opM.depositar(Double.parseDouble(txtValor.getText()), conta.getCodConta())     ){
+
+                         cp.alertaSucesso("Transferência");
+                         voltarMenu();
+
+                    }else{
+
+                        cp.alerta("Tranferência negado!", "Saldo insuficiente. Faça um depósito");
+
+                    }
                 }
+               
             }
         }
     }
