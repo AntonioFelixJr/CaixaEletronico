@@ -48,7 +48,7 @@
             <Font size="24.0" />
          </font>
       </JFXButton>
-      <ComboBox fx:id="cbBanco" layoutX="731.0" layoutY="407.0" onHidden="#validarBanco" prefHeight="25.0" prefWidth="270.0" promptText="Escolha seu banco" style="-fx-font-size: 20;" visibleRowCount="7" />
+      <ComboBox fx:id="cbBanco" layoutX="731.0" layoutY="407.0" prefHeight="25.0" prefWidth="270.0" promptText="Escolha seu banco" style="-fx-font-size: 20;" visibleRowCount="7" />
       <RadioButton fx:id="rbCorrente" layoutX="731.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#clickCorrente" text="Corrente" textFill="WHITE">
          <font>
             <Font size="18.0" />

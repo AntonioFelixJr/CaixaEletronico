@@ -7,6 +7,7 @@ import br.com.caixaCifra.DAO.OperacaoDAO;
 import br.com.caixaCifra.Model.Banco;
 import br.com.caixaCifra.Model.ClienteLogado;
 import br.com.caixaCifra.Model.Conta;
+import br.com.caixaCifra.Util.Relatorio;
 import br.com.caixaCifra.View.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -126,8 +127,14 @@ public class FXMLDepositoController implements Initializable {
                     
                     opM.depositar(Double.parseDouble(txtValor.getText()), conta.getCodConta());
                     cp.alertaSucesso("Depósito");
+                    if(cp.alertaExibirExtrato("Comprovante")){
+                       
+                        Relatorio novoRelatorio = new Relatorio();
+                        novoRelatorio.gerarRelatorioDeposito(txtValor.getText(), conta);
+                        cp.alertaSucesso("Impressão do comprovante");
+
+                    }
                     voltarMenu();
-                    
                 }
             }
         }
@@ -255,7 +262,6 @@ public class FXMLDepositoController implements Initializable {
     
     private Conta pegarConta(){
         
-        Conta conta= new Conta();
         Banco banco;
 
         banco = cbBanco.getSelectionModel().getSelectedItem();

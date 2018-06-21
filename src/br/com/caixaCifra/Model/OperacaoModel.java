@@ -45,6 +45,12 @@ public class OperacaoModel {
         return op.consultarSaldo(id);
         
     }
+    public Conta pegarContaBanco(int codConta){
+        
+        return op.pegarContaBanco(codConta);
+        
+    }
+    
     
     public boolean verificarSenha(int senha){    
                        

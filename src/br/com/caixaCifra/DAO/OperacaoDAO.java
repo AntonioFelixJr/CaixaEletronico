@@ -160,6 +160,51 @@ public class OperacaoDAO {
         return conta;
     }
 
+     public Conta pegarContaBanco(int codConta){
+  
+      Conta conta = new Conta();
+      Banco banco = new Banco();
+              
+        try{
+  
+            String query="SELECT  numConta, agenciaConta, tipoConta , nomeBanco, tbConta.codBanco\n" +
+                        "FROM tbConta\n" +
+                        "INNER JOIN tbBanco\n" +
+                        "ON tbConta.codBanco = tbBanco.codBanco WHERE codConta =?;";
+
+            PreparedStatement stmt  = con.abrirConexao().prepareStatement(query);
+            stmt.setInt(1,codConta);
+            
+            rs = stmt.executeQuery();
+           
+            
+            if (rs.next()) {
+               
+                conta.setNumConta(rs.getString("numConta"));
+                conta.setAgenciaConta(rs.getString("agenciaConta"));
+                conta.setTipoConta(rs.getString("tipoConta") );
+                banco.setCodBanco(rs.getInt("codBanco"));
+                banco.setNomeBanco(rs.getString("nomeBanco"));
+
+
+            } else {
+                 System.out.println(stmt.toString());
+
+            }
+            con.fecharConexao();
+            stmt.close();
+           
+            
+         
+        }catch(SQLException ex) {
+            System.out.println("Falha ao pegar a conta."+ex.toString());
+           
+            
+        }
+        conta.setBanco(banco);
+        return conta;
+    }
+
     public void attSaldo(double saldo, int id) {
         
         try {

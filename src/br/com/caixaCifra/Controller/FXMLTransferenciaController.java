@@ -7,6 +7,7 @@ import br.com.caixaCifra.Util.Componentes;
 import br.com.caixaCifra.Model.Banco;
 import br.com.caixaCifra.Model.ClienteLogado;
 import br.com.caixaCifra.Model.Conta;
+import br.com.caixaCifra.Util.Relatorio;
 import br.com.caixaCifra.View.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -177,7 +178,19 @@ public class FXMLTransferenciaController implements Initializable {
                     if(opM.sacar(Double.parseDouble(txtValor.getText()), ClienteLogado.getCodConta())
                         && opM.depositar(Double.parseDouble(txtValor.getText()), conta.getCodConta())     ){
 
-                         cp.alertaSucesso("Transferência");
+                        cp.alertaSucesso("Transferência");
+                        
+                        if(cp.alertaExibirExtrato("Recibo")){
+                            Conta  contaRemetente  =new Conta();
+                            contaRemetente = opM.pegarContaBanco(ClienteLogado.getCodConta());
+                            Relatorio novoRelatorio = new Relatorio();
+                            novoRelatorio.gerarRelatorioTransferencia(txtValor.getText(),contaRemetente ,conta);
+                            cp.alertaSucesso("Impressão do recibo");
+                            voltarMenu();
+
+                        }else{
+                            voltarMenu();
+                        }
                          voltarMenu();
 
                     }else{

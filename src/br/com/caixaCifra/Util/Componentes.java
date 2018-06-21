@@ -115,11 +115,7 @@ public class Componentes {
         
         Optional<ButtonType> result = alert.showAndWait();
         
-        if(result.get() == ButtonType.OK){
-            return true;
-        }else{
-           return false;
-        }
+        return result.get() == ButtonType.OK;
     }
 
     public void alertaSucesso(String op) {
@@ -142,13 +138,30 @@ public class Componentes {
             }
         });
     }
-    public boolean alertaConfirmacaoPag(String codBarra,double valor){
+    public boolean alertaConfirmacaoPag(String codBarra, String data,double valor){
        
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("");
         alert.setHeaderText("Confirme as informações abaixo:");
-        alert.setContentText("Código de barras: \n"+codBarra+"\n"
-                + "VALOR: R$"+valor+"\n");
+        alert.setContentText("Código de barras: \n"+codBarra+"\nDATA DE VENCIMENTO: "+data
+                + "\nVALOR: R$"+valor+"\n");
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.initStyle(StageStyle.UNDECORATED);
+        
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            return true;
+        }else{
+           return false;
+        }
+        
+    }
+    public boolean alertaExibirExtrato(String tipo){
+       
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("");
+        alert.setHeaderText(tipo+":");
+        alert.setContentText("Deseja imprimir o "+tipo+". ");
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.initStyle(StageStyle.UNDECORATED);
         

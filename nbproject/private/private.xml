@@ -8,6 +8,7 @@
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/View/FXMLLogin.fxml</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Controller/FXMLDepositoController.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Controller/FXMLLoginController.java</file>
+            <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Model/OperacaoModel.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/View/FXMLMenu.fxml</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Controller/FXMLSenhaController.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/nbproject/build-impl.xml</file>
@@ -18,8 +19,10 @@
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/View/FXMLTransferencia.fxml</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/View/Main.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Controller/FXMLSaqueController.java</file>
+            <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Model/Conta.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Controller/FXMLPagamentoController.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/DAO/OperacaoDAO.java</file>
+            <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Util/Relatorio.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/DAO/Conexao.java</file>
             <file>file:/C:/Users/Casa/Documents/NetBeansProjects/CaixaEletronico/src/br/com/caixaCifra/Validation/ValidarCampos.java</file>
         </group>

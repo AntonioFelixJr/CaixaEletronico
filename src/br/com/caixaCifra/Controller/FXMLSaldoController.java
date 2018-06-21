@@ -1,8 +1,10 @@
 package br.com.caixaCifra.Controller;
 
-import br.com.caixaCifra.DAO.OperacaoDAO;
+import br.com.caixaCifra.Util.Relatorio;
 import br.com.caixaCifra.Model.ClienteLogado;
+import br.com.caixaCifra.Model.Conta;
 import br.com.caixaCifra.Model.OperacaoModel;
+import br.com.caixaCifra.Util.Componentes;
 import br.com.caixaCifra.View.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -19,19 +21,38 @@ public class FXMLSaldoController implements Initializable{
 
     @FXML
     private JFXButton btSaldoVoltar;
+    
+    @FXML
+    private JFXButton btImprimirRelatorio;
 
+    OperacaoModel opM =new OperacaoModel();
+     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       OperacaoModel opM =new OperacaoModel();
+      
        
         txtSaldo.setText(""+opM.pegarSaldo(ClienteLogado.getCodConta()));    
         
     }
+    
+    @FXML
+    private void imprimirRelatorio() throws IOException{
+        Relatorio novoRelatorio = new Relatorio();
+        Componentes cp = new Componentes();
+        Conta conta = new Conta();
+        conta = opM.pegarContaBanco(ClienteLogado.getCodConta());
+        novoRelatorio.gerarRelatorioSaldo(txtSaldo.getText(), conta);
+        cp.alertaSucesso("Impressão do comprovante");
+        voltarMenu();
+
+    }
+    
     @FXML
     private void voltarMenu() throws IOException{
         
-         Main tela = new Main();
-         tela.sceneHandler("Menu");
+        Main tela = new Main();
+        
+        tela.sceneHandler("Menu");
          
 
     }

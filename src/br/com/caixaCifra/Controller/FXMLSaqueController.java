@@ -3,7 +3,9 @@ package br.com.caixaCifra.Controller;
 import br.com.caixaCifra.Model.OperacaoModel;
 import br.com.caixaCifra.Validation.ValidarCampos;
 import br.com.caixaCifra.Util.Componentes;
+import br.com.caixaCifra.Util.Relatorio;
 import br.com.caixaCifra.Model.ClienteLogado;
+import br.com.caixaCifra.Model.Conta;
 import br.com.caixaCifra.View.Main;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -54,10 +56,19 @@ public class FXMLSaqueController implements Initializable{
         if(validarCampos.validarValor(txtValor.getText(), lbErroValor,limiteSaque)){
                         
             if(opM.sacar(Double.parseDouble(txtValor.getText()),
-            ClienteLogado.getCodConta())){
+                ClienteLogado.getCodConta())){
 
                 cp.alertaSucesso("Saque");
+                if(cp.alertaExibirExtrato("Comprovante")){
+                    Conta  conta  =new Conta();
+                    conta = opM.pegarContaBanco(ClienteLogado.getCodConta());
+                    Relatorio novoRelatorio = new Relatorio();
+                    novoRelatorio.gerarRelatorioSaque(txtValor.getText(), conta);
+                    cp.alertaSucesso("Impressão do comprovante");
+
+                }
                 voltarMenu();
+                
 
             }else{
 

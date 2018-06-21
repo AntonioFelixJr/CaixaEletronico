@@ -5,6 +5,9 @@
  */
 package br.com.caixaCifra.Validation;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javafx.scene.control.Label;
 
 public class ValidarCampos {
@@ -83,7 +86,58 @@ public class ValidarCampos {
             }
         }
     }
+    public boolean verificarErroData(String data, Label erro){
+        if(validarVencimnto(data) == false){
+            
+            erro.setText("Data inválida. Insira a data de hoje ("+pegarData()+") ou posterior.");
+            tornarErroVisivel(erro);
+
+            return false;
+            
+        }
   
+        tornarErroInvisivel(erro);
+        return true;
+    }
+    public boolean validarVencimnto(String data){
+
+        int dia = Integer.parseInt(data.substring(8,10)),
+            mes = Integer.parseInt(data.substring(5,7)),
+            ano = Integer.parseInt(data.substring(0,4)); 
+       
+        data = pegarData(); 
+
+        int diaAtual = Integer.parseInt(data.substring(0,2)),
+            mesAtual = Integer.parseInt(data.substring(3,5)),
+            anoAtual = Integer.parseInt(data.substring(6,10)); 
+        
+        if(anoAtual <= ano){
+ 
+            if(anoAtual == ano){
+
+                if(mesAtual <= mes){
+
+                    if(mesAtual == mes){
+                        
+                        if(diaAtual <= dia){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }else{
+                        return true;
+
+                    }
+                }else{
+                    return false;
+                }                
+            }else{
+                return true;
+            }
+        }else{
+            return false;
+        }
+    }
     public boolean validarBanco(String banco, Label lbErroBanco){
         
         if( banco.equals("Escolha seu banco")){
@@ -160,6 +214,11 @@ public class ValidarCampos {
         }
         return true;
     }
-    
+    private String pegarData() { 
+	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+	Date date = new Date(); 
+        
+	return dateFormat.format(date); 
+    }
     
 }

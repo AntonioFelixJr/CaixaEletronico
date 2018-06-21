@@ -163,15 +163,18 @@ public class FXMLLoginController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
-        carregarBancos();
-        tpConta="Corrente";
-        rbCorrente.setSelected(true);
+
+        cbBanco.setItems(cp.carregarBancos());
+        rbCorrente.selectedProperty().setValue(true);
+         
+        clickPoupanca();
+        clickCorrente();
     }
 
     
 
     public void validarBanco(){
-      validarCampos.validarBanco(cbBanco.getSelectionModel().getSelectedItem().toString(), lbErroBanco);
+        validarCampos.validarBanco(cbBanco.getSelectionModel().getSelectedItem().toString(), lbErroBanco);
         
     }
 
